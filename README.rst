@@ -13,7 +13,7 @@ Online Judge            解题报告
 ======================= ============
 
 .. __: http://www.spoj.com/
-.. __: spoj/README.rst
+.. __: SPOJ/README.rst
 
 
 要生成HTML，请在git clone后运行make。

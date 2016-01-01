@@ -6,9 +6,10 @@ Online Judge解题报告
 
 除了解题报告以外，还有按\ `主题 <topics/README.rst>`_\ 排列的知识点。
 
-
 ======================= ============
-`Sphere online judge`__ `解题报告`__
+Online Judge            解题报告
+======================= ============
+`Sphere online judge`__ `SPOJ`__
 ======================= ============
 
 .. __: http://www.spoj.com/

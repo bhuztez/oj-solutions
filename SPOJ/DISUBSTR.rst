@@ -8,28 +8,22 @@ Distinct Substrings
 
 .. code::
 
-    S[i..j]  (0 =< i < j =< N)
-
-比如字符串\ :code:`abc`\ 
-
-.. code::
-
-   S[0..2] = "ab"
-
+    { S[i:j]
+      FOR i <- range(0, N+1),
+      FOR j <- range(0, N+1),
+      i < j}
 
 从0到N这N+1个整数中任选2个，i取小的，j取大的，这样总共就有\ :math:`{n+1 \choose 2}`\ 个子串
-
 
 计算后缀数组T。对于S中的某个重复出现的子串P，我们找出T中最大的区间，使得其中每个字符串都以P开头
 
 .. code::
 
-    T[m-1][0..length(P)] != P
+    T[m-1][0:|P|] =/= P
 
-    T[i][0..length(P)] = P (m =< i =< n)
+    (m =< i =< n) => (T[i][0:|P|] = P)
 
-    T[n+1][0..length(P)] != P
-
+    T[n+1][0:|P|] =/= P
 
 所以P共出现了n+1-m次，需要从总数中减去n-m次。
 

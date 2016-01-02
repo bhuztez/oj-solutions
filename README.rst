@@ -15,5 +15,150 @@ Online Judge            解题报告
 .. __: http://www.spoj.com/
 .. __: SPOJ/README.rst
 
-
 要生成HTML，请在git clone后运行make。
+
+
+符号定义
+========
+
+解题报告中所使用的符号
+
+======================= ======================================
+:code:`NOT`             :math:`\neg`
+:code:`FORALL`          :math:`\forall`
+:code:`EXISTS`          :math:`\exists`
+:code:`{}`              :math:`\emptyset`
+:code:`<-`              :math:`\in`
+:code:`</-`             :math:`\notin`
+:code:`=`               :math:`=`
+:code:`=/=`             :math:`\neq`
+:code:`|x|`             :math:`|x|`
+:code:`<`               :math:`<`\ ,\ :math:`\subset`
+:code:`=<`              :math:`\leq`\ ,\ :math:`\subseteq`
+:code:`/\ `             :math:`\cap`
+:code:`\/`              :math:`\cup`
+:code:`\ `              :math:`\setminus`
+:code:`=>`              implies
+:code:`<=>`             iff
+:code:`a**b`            :math:`a^b`
+:code:`{x FOR x <- S}`  :math:`\{x | x \in S\}`
+:code:`<=`              assignment
+======================= ======================================
+
+
+类型定义
+========
+
+解题报告中所使用的类型
+
+整数
+----
+
+:code:`Integer()`
+
+
+集合
+----
+
+若元素类型为\ :code:`X`\ ，则集合类型为\ :code:`Set(X)`\ 。比如，元素类型为整数的集合为\ :code:`Set(Integer())`\ 。
+
+.. code::
+
+    1 <- {1,2,3}
+    4 </- {1,2,3}
+    {1} \/ {2} = {1,2}
+    {1,2} /\ {2,3} = {2}
+    {1,2} \ {2,3} = {1}
+    {1,2} = {1,2}
+    {1,2} =/= {1,2,3}
+    {} < {1}
+    {1} < {1,2}
+
+数组
+----
+
+若元素类型为\ :code:`X`\ ，则数组类型为\ :code:`Array(X)`\ 。比如，元素类型为整数的数组为\ :code:`Array(Integer())`\ 。
+
+从数组中取元素的符号与Python一致
+
+.. code::
+
+    [1,2,3] = [1,2,3]
+    [1,2,3] + [4] = [1,2,3,4]
+    ([1,2,3])[0] = 1
+    ([1,2,3])[:2] = [1,2]
+
+
+字符串
+------
+
+:code:`String() = Array(Integer())`
+
+字符串就是普通的整数数组
+
+
+函数定义
+========
+
+解题报告中所使用的函数
+
+min
+---
+
+求参数中的最小值
+
+.. code::
+
+    min(1,2,3) = 1
+    min(2,3) = 2
+
+
+max
+---
+
+求参数中的最大值
+
+.. code::
+
+    max(1,2,3) = 3
+    max(1,2) = 2
+
+
+range
+-----
+
+类似Python中的range
+
+.. code::
+
+    range(1,4) = [1,2,3]
+
+
+size
+----
+
+.. code::
+
+    size([1,1,1]) = 3
+    size({1,2,3}) = 3
+
+
+reduce
+------
+
+类似Python中的reduce
+
+.. code::
+
+    reduce(+, [1,1,1]) = 3
+    reduce(+, [1,2,3]) = 6
+
+
+powerset
+--------
+
+.. code::
+
+    powerset({1,2,3}) = {{},{1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}}
+    powerset([1,2,3]) = {[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]}
+    powerset([1,1,2]) = {[],[1,1],[1,2],[1,1,2]}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Distinct Substrings</title>
+<link rel="stylesheet" href="../math.css" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+<script type="text/javascript" src="../render.js"></script>
+<link rel="stylesheet" href="../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="distinct-substrings">
+<h1 class="title">Distinct Substrings</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">tags:</th><td class="field-body">suffix</td>
+</tr>
+</tbody>
+</table>
+<p>一个长度为N的字符串S，所有子串可以表示为</p>
+<pre class="code literal-block">
+{ S[i:j]
+  FOR i &lt;- range(0, N+1),
+  FOR j &lt;- range(0, N+1),
+  i &lt; j}
+</pre>
+<p>从0到N这N+1个整数中任选2个，i取小的，j取大的，这样总共就有<span alt="{n+1 \choose 2}" class="formula">
+<i>n</i> + 1<span class="unknown">\choose</span>2</span>
+个子串</p>
+<p>计算后缀数组T。对于S中的某个重复出现的子串P，我们找出T中最大的区间，使得其中每个字符串都以P开头</p>
+<pre class="code literal-block">
+T[m-1][0:|P|] =/= P
+
+(m =&lt; i =&lt; n) =&gt; (T[i][0:|P|] = P)
+
+T[n+1][0:|P|] =/= P
+</pre>
+<p>所以P共出现了n+1-m次，需要从总数中减去n-m次。</p>
+<p>可以按顺序比较 <code>T[i] T[i+1] (0 =&lt; i =&lt; N-1)</code> ，若同时出现P，那么就从总数中减去1。而要去掉所有子串的重复次数，只需要每次从总数中减去两个字符串的最长公共前缀的长度。</p>
+</div>
+</body>
+</html>

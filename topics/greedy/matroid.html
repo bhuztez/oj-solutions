@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Matroid</title>
+<link rel="stylesheet" href="../../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="matroid">
+<h1 class="title">Matroid</h1>
+
+<div class="section" id="id1">
+<h1>定义</h1>
+<p>若元素类型为<code>X</code>，Matroid <code>(E,M)</code>中，<code>E : Set(X)</code>，<code>M : Set(Set(X))</code>满足以下条件</p>
+<pre class="code literal-block">
+S : Set(X)
+
+(S &lt;- M) =&gt; (S =&lt; E)
+</pre>
+<p>继承性: hereditary property</p>
+<pre class="code literal-block">
+S : Set(X)
+P : Set(X)
+
+(S &lt;- M) =&gt; ((P =&lt; S) =&gt; (P &lt;- M))
+</pre>
+<p>扩充性: augmentation property, or independent set exchange property</p>
+<pre class="code literal-block">
+S : Set(X)
+T : Set(X)
+
+(S &lt;- M) /\ (T &lt;- M) /\ (|S| &gt; |T|) =&gt; (EXISTS (e : X) &lt;- (S \ T), (T \/ {e}) &lt;- M)
+</pre>
+</div>
+<div class="section" id="basis">
+<h1>Basis</h1>
+<p>定义集合<code>B : Set(Set(X))</code>，满足</p>
+<pre class="code literal-block">
+S : Set(X)
+T : Set(X)
+
+(S &lt;- M) =&gt; NOT EXISTS T &lt;- M, ((S &lt; T) &lt;=&gt; (S &lt;- B))
+</pre>
+<div class="section" id="id2">
+<h2>性质一</h2>
+<p>uniformity property</p>
+<pre class="code literal-block">
+S : Set(X)
+T : Set(X)
+
+(S &lt;- B) /\ (T &lt;- B) =&gt; |S| = |T|
+</pre>
+<p>证明：</p>
+<p>若<code>|S| &gt; |T|</code></p>
+<p>由扩充性可得<code>EXISTS (e:X) &lt;- (S \ T), (T \/ {e}) &lt;- M</code></p>
+<p>即<code>EXISTS (R:Set(X)) &lt;- M, T &lt; R</code>(<code>R = T \/ {e}</code>)</p>
+<p>而由Basis的定义可得<code>NOT EXISTS R &lt;- M, T &lt; R</code></p>
+<p>与前一条结论矛盾，故假设不成立。</p>
+<p>同理可得，<code>|S| &lt; |T|</code>也不成立。</p>
+<p>故<code>|S| = |T|</code>。</p>
+</div>
+<div class="section" id="id3">
+<h2>性质二</h2>
+<p>将集合<code>E</code>的元素任意排列，按以下步骤执行，得到<code>S &lt;- B</code>。</p>
+<pre class="code literal-block">
+S &lt;= {}
+FOR EACH e &lt;- E
+  IF (S \/ {e}) &lt;- M
+    S &lt;= S \/ {e}
+  ENDIF
+ENDFOR
+</pre>
+<p>证明</p>
+<p>假设<code>S &lt;/- B</code>，由集合<code>B</code>的定义 可得<code>EXISTS (T:Set(X)) &lt;- M, S &lt; T</code></p>
+<p>即<code>|T| &gt; |S|</code> ，由扩充性可得，<code>EXISTS (e:X) &lt;- (T \ S), (S \/ {e}) &lt;- M</code></p>
+<p>由Matroid的定义可得，<code>T =&lt; E</code>，即<code>e &lt;- E</code></p>
+<p>不妨设执行过程中，<code>NOT (S' \/ {e}) &lt;/- M</code></p>
+<p>因为<code>S' =&lt; S</code>，所以<code>(S' \/ {e}) =&lt; (S \/ {e})</code></p>
+<p>由继承性可得，<code>(S' \/ {e}) &lt;- M</code></p>
+<p>与<code>(S' \/ {e}) &lt;/- M</code>矛盾。</p>
+<p>故假设不成立，即<code>S &lt;- B</code></p>
+</div>
+<div class="section" id="max-weighted-basis">
+<h2>Max-Weighted Basis</h2>
+<p>假设<code>E</code>中每个元素都有一个权重，把<code>E</code>中所有元素按权重从大到小排列后，执行Basis性质二中的步骤，得到的<code>S</code>就是总权重最大的Basis。</p>
+<p>证明</p>
+<p>假设存在<code>T : Set(X)</code>，满足</p>
+<pre class="code literal-block">
+(T &lt;- B) /\ (reduce(+, T) &gt; reduce(+, S))
+</pre>
+<p>由Basis性质一可得，<code>|S| = |T|</code></p>
+<p>把<code>S</code>和<code>T</code>，分别按权重从大到小排列，即</p>
+<pre class="code literal-block">
+(i &lt; j) =&gt; (weight(S[i]) &gt;= weight(S[j]))
+(i &lt; j) =&gt; (weight(T[i]) &gt;= weight(T[j]))
+</pre>
+<p>不妨设有k使得</p>
+<pre class="code literal-block">
+(i &lt; k) =&gt; (weight(S[i]) &gt;= weight(T[i]))
+weight(S[k]) &lt; weight(T[k])
+</pre>
+<p>令</p>
+<pre class="code literal-block">
+S' = reduce(\/, [{e} FOR (e:X) &lt;- S[:k]])
+T' = reduce(\/, [{e} FOR (e:X) &lt;- T[:k+1])
+</pre>
+<p><code>|S'| = k &lt; k+1 = |T|</code>，由扩充性可得，<code>EXISTS e &lt;- (T' \ S'), (S' \/ {e}) \in M</code></p>
+<p><code>weight(e) &gt;= weight(T[k]) &gt; weight(S[k])</code></p>
+<p>不妨设执行过程中，<code>(S'' \/ {e}) &lt;/- M</code>。</p>
+<p>因为<code>S'' =&lt; S'</code>，所以<code>(S'' \/ {e}) =&lt; (S' \/ {e})</code></p>
+<p>由继承性可得，<code>(S'' \/ {e}) &lt;- M</code>。</p>
+<p>与<code>S'' \/ {e} &lt;/- M</code>矛盾。</p>
+<p>所以假设不成立，<code>S</code>就是总权重最大的Basis。</p>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>String problem</title>
+<link rel="stylesheet" href="../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="string-problem">
+<h1 class="title">String problem</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">tags:</th><td class="field-body">dp</td>
+</tr>
+</tbody>
+</table>
+<p>注意，这个问题中substring是subsequence意思。</p>
+<p>令<code>L(x, y) = reduce(min, [|s| FOR s &lt;- (powerset(x) \ powerset(y))])</code></p>
+<p>已知<code>S : String()</code>和<code>T : String()</code>，这个题就是要求<code>L(S, T)</code>。因为<code>(|S| = N) =&gt; (|powerset(S)| = 2**N)</code>，因此把所有subsequence列一遍是不现实的。</p>
+<pre class="code literal-block">
+U : String()
+
+(U &lt;- powerset(S[:i])) /\ (|U| = L(S[:i], T[:j])) /\ (U[-1] =/= T[j]) =&gt; (|U| = L(S[:i], T[:j+1]))
+</pre>
+<p>证明。</p>
+<p>因为<code>powerset(T[:j]) =&lt; P(T[:j+1])</code>，所以</p>
+<pre class="code literal-block">
+V : String()
+
+(V &lt;- (powerset(S[:i]) \ powerset(T[:j+1]))) =&gt; (V &lt;- (powerset(S[:i]) \ powerset(T[:j])))
+</pre>
+<p>若<code>|V| &lt; |U|</code>，则<code>L(S[:i], T[:j]) =&lt; |V| &lt; |U|</code> 与 <code>L(S[:i], T[:j]) = |U|</code> 矛盾</p>
+<p>令<code>R(x) = {s+[x[-1]] FOR s &lt;- powerset(x[:-1])}</code>，<code>L'(x,y) = reduce(min, [|s| FOR s &lt;- (R(x) \ powerset(y))])</code>，有</p>
+<pre class="code literal-block">
+L(S[:i],T[:j]) = reduce(min, {L'(S[:k], T[:j]) FOR k &lt;- range(0,i)})
+               = min(L(S[:i-1],T[:j]), L'(S[:i],T[:j]))
+</pre>
+<pre class="code literal-block">
+(S[i] =/= T[j]) =&gt; (L'(S[:i], T[:j]) = L'(S[:i-1], T[:j]))
+</pre>
+<p>类似上面，用反证法即可证明</p>
+<pre class="code literal-block">
+(S[i] = T[j]) =&gt; L'(S[:i],T[:j]) = 1 + L(S[:i-1],T[:j-1])
+</pre>
+</div>
+</body>
+</html>

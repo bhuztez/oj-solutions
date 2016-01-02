@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Online Judge解题报告</title>
+<link rel="stylesheet" href="math.css" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+<script type="text/javascript" src="render.js"></script>
+<link rel="stylesheet" href="html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="online-judge">
+<h1 class="title">Online Judge解题报告</h1>
+
+<p>主要就是记录一下解题思路，以及证明的思路。假如题目很长，也会有一个简单的概述。不会有任何实际代码，代码随便搜就有了。</p>
+<p>除了解题报告以外，还有按<a class="reference external" href="topics/">主题</a>排列的知识点。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="66%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Online Judge</th>
+<th class="head">解题报告</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><a class="reference external" href="http://www.spoj.com/">Sphere online judge</a></td>
+<td><a class="reference external" href="SPOJ/">SPOJ</a></td>
+</tr>
+</tbody>
+</table>
+<p>要生成HTML，请在git clone后运行make。</p>
+<div class="section" id="id4">
+<h1>符号定义</h1>
+<p>解题报告中所使用的符号</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><code>NOT</code></td>
+<td><span alt="\neg" class="formula">
+¬</span>
+</td>
+</tr>
+<tr><td><code>FORALL</code></td>
+<td><span alt="\forall" class="formula">
+∀</span>
+</td>
+</tr>
+<tr><td><code>EXISTS</code></td>
+<td><span alt="\exists" class="formula">
+∃</span>
+</td>
+</tr>
+<tr><td><code>{}</code></td>
+<td><span alt="\emptyset" class="formula">
+∅</span>
+</td>
+</tr>
+<tr><td><code>&lt;-</code></td>
+<td><span alt="\in" class="formula">
+ ∈ </span>
+</td>
+</tr>
+<tr><td><code>&lt;/-</code></td>
+<td><span alt="\notin" class="formula">
+∉</span>
+</td>
+</tr>
+<tr><td><code>=</code></td>
+<td><span alt="=" class="formula">
+ = </span>
+</td>
+</tr>
+<tr><td><code>=/=</code></td>
+<td><span alt="\neq" class="formula">
+ ≠ </span>
+</td>
+</tr>
+<tr><td><code>|x|</code></td>
+<td><span alt="|x|" class="formula">
+|<i>x</i>|</span>
+</td>
+</tr>
+<tr><td><code>&lt;</code></td>
+<td><span alt="&lt;" class="formula">
+ &lt; </span>
+,<span alt="\subset" class="formula">
+ ⊂ </span>
+</td>
+</tr>
+<tr><td><code>=&lt;</code></td>
+<td><span alt="\leq" class="formula">
+ ≤ </span>
+,<span alt="\subseteq" class="formula">
+ ⊆ </span>
+</td>
+</tr>
+<tr><td><code>/\ </code></td>
+<td><span alt="\cap" class="formula">
+∩</span>
+</td>
+</tr>
+<tr><td><code>\/</code></td>
+<td><span alt="\cup" class="formula">
+∪</span>
+</td>
+</tr>
+<tr><td><code>\ </code></td>
+<td><span alt="\setminus" class="formula">
+∖</span>
+</td>
+</tr>
+<tr><td><code>=&gt;</code></td>
+<td>implies</td>
+</tr>
+<tr><td><code>&lt;=&gt;</code></td>
+<td>iff</td>
+</tr>
+<tr><td><code>a**b</code></td>
+<td><span alt="a^b" class="formula">
+<i>a</i><sup><i>b</i></sup></span>
+</td>
+</tr>
+<tr><td><code>{x FOR x &lt;- S}</code></td>
+<td><span alt="\{x | x \in S\}" class="formula">
+{<i>x</i>|<i>x</i> ∈ <i>S</i>}</span>
+</td>
+</tr>
+<tr><td><code>&lt;=</code></td>
+<td>assignment</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h1>类型定义</h1>
+<p>解题报告中所使用的类型</p>
+<div class="section" id="id6">
+<h2>整数</h2>
+<p><code>Integer()</code></p>
+</div>
+<div class="section" id="id7">
+<h2>集合</h2>
+<p>若元素类型为<code>X</code>，则集合类型为<code>Set(X)</code>。比如，元素类型为整数的集合为<code>Set(Integer())</code>。</p>
+<pre class="code literal-block">
+1 &lt;- {1,2,3}
+4 &lt;/- {1,2,3}
+{1} \/ {2} = {1,2}
+{1,2} /\ {2,3} = {2}
+{1,2} \ {2,3} = {1}
+{1,2} = {1,2}
+{1,2} =/= {1,2,3}
+{} &lt; {1}
+{1} &lt; {1,2}
+</pre>
+</div>
+<div class="section" id="id8">
+<h2>数组</h2>
+<p>若元素类型为<code>X</code>，则数组类型为<code>Array(X)</code>。比如，元素类型为整数的数组为<code>Array(Integer())</code>。</p>
+<p>从数组中取元素的符号与Python一致</p>
+<pre class="code literal-block">
+[1,2,3] = [1,2,3]
+[1,2,3] + [4] = [1,2,3,4]
+([1,2,3])[0] = 1
+([1,2,3])[:2] = [1,2]
+</pre>
+</div>
+<div class="section" id="id9">
+<h2>字符串</h2>
+<p><code>String() = Array(Integer())</code></p>
+<p>字符串就是普通的整数数组</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h1>函数定义</h1>
+<p>解题报告中所使用的函数</p>
+<div class="section" id="min">
+<h2>min</h2>
+<p>求参数中的最小值</p>
+<pre class="code literal-block">
+min(1,2,3) = 1
+min(2,3) = 2
+</pre>
+</div>
+<div class="section" id="max">
+<h2>max</h2>
+<p>求参数中的最大值</p>
+<pre class="code literal-block">
+max(1,2,3) = 3
+max(1,2) = 2
+</pre>
+</div>
+<div class="section" id="range">
+<h2>range</h2>
+<p>类似Python中的range</p>
+<pre class="code literal-block">
+range(1,4) = [1,2,3]
+</pre>
+</div>
+<div class="section" id="size">
+<h2>size</h2>
+<pre class="code literal-block">
+size([1,1,1]) = 3
+size({1,2,3}) = 3
+</pre>
+</div>
+<div class="section" id="reduce">
+<h2>reduce</h2>
+<p>类似Python中的reduce</p>
+<pre class="code literal-block">
+reduce(+, [1,1,1]) = 3
+reduce(+, [1,2,3]) = 6
+</pre>
+</div>
+<div class="section" id="powerset">
+<h2>powerset</h2>
+<pre class="code literal-block">
+powerset({1,2,3}) = {{},{1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}}
+powerset([1,2,3]) = {[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]}
+powerset([1,1,2]) = {[],[1,1],[1,2],[1,1,2]}
+</pre>
+</div>
+</div>
+</div>
+</body>
+</html>

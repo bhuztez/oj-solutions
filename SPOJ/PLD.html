@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Palindromes</title>
+<link rel="stylesheet" href="../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="palindromes">
+<h1 class="title">Palindromes</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">tags:</th><td class="field-body">manacher</td>
+</tr>
+</tbody>
+</table>
+<p>已知长度为N的字符串S，用manacher算法求出每个位置最长回文的长度L。</p>
+<p>比如字符串 aaa</p>
+<pre class="code literal-block">
+L(0,0) = 0
+L(0,1) = 1
+L(1,1) = 2
+L(1,2) = 3
+L(2,2) = 2
+L(2,3) = 1
+L(3,3) = 0
+</pre>
+<p>根据回文的性质，以<code>i,i</code>为中心的回文长度一定是偶数，以<code>i,j (i!=j)</code>为中心的回文长度一定是奇数</p>
+<p>所以</p>
+<p>若K为奇数，计算<code>L(i,j) (i!=j)</code>中大于等于K的个数</p>
+<p>若K是偶数，计算<code>L(i,i)</code>中大于等于K的个数</p>
+</div>
+</body>
+</html>

@@ -9,9 +9,15 @@ Online Judge解题报告
 ======================= ============
 Online Judge            解题报告
 ======================= ============
+`Google Code Jam`__     `GCJ`__
+`PKU JudgeOnline`__     `POJ`__
 `Sphere online judge`__ `SPOJ`__
 ======================= ============
 
+.. __: https://code.google.com/codejam/contests.html
+.. __: GCJ/README.rst
+.. __: http://poj.org/
+.. __: POJ/README.rst
 .. __: http://www.spoj.com/
 .. __: SPOJ/README.rst
 

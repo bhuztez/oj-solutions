@@ -12,6 +12,8 @@ Online Judge            解题报告
 `Google Code Jam`__     `GCJ`__
 `PKU JudgeOnline`__     `POJ`__
 `Sphere online judge`__ `SPOJ`__
+`USACO Traning`__       `USACO`__
+`UVa Online Judge`__    `UVA`__
 ======================= ============
 
 .. __: https://code.google.com/codejam/contests.html
@@ -20,6 +22,24 @@ Online Judge            解题报告
 .. __: POJ/README.rst
 .. __: http://www.spoj.com/
 .. __: SPOJ/README.rst
+.. __: http://train.usaco.org/usacogate/
+.. __: USACO/README.rst
+.. __: https://uva.onlinejudge.org/
+.. __: UVA/README.rst
+
+
+=============================== ============
+习题集                          解题报告
+=============================== ============
+`Competitive Programming 3`__   `CP3`__
+`CS 97SI`__                     `CS97SI`__
+=============================== ============
+
+.. __: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=604
+.. __: CP3/README.rst
+.. __: http://web.stanford.edu/class/cs97si/
+.. __: CS97SI.rst
+
 
 要生成HTML，请在git clone后运行make。
 

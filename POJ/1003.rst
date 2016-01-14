@@ -1,0 +1,9 @@
+========
+Hangover
+========
+
+简述
+====
+
+输入c，就最小的N，使得 :code:`sum(1/i for i in range(2,N+1))` 大于等于c
+

@@ -14,7 +14,7 @@ Matroid
 
     (S <- M) => (S =< E)
 
-继承性: hereditary property
+继承性: hereditary property, or subclusive property
 
 .. code::
 

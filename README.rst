@@ -44,6 +44,16 @@ Online Judge            解题报告
 要生成HTML，请在git clone后运行make。
 
 
+标签定义
+========
+
+========== =======================
+dp         Dynamic Programming
+manacher   Manacher's Algorithm
+suffix     Suffix Array
+========== =======================
+
+
 符号定义
 ========
 

@@ -28,17 +28,20 @@ Online Judge            解题报告
 .. __: UVA/README.rst
 
 
-=============================== ============
-习题集                          解题报告
-=============================== ============
-`Competitive Programming 3`__   `CP3`__
-`CS 97SI`__                     `CS97SI`__
-=============================== ============
+================================= ==============
+习题集                            解题报告
+================================= ==============
+`Competitive Programming 3`__     `CP3`__
+`CS 97SI`__                       `CS97SI`__
+`POJ訓練計劃Moon修訂298道題`__    `MOON298`__
+================================= ==============
 
 .. __: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=604
 .. __: CP3/README.rst
 .. __: http://web.stanford.edu/class/cs97si/
 .. __: CS97SI.rst
+.. __: http://cs.cysh.cy.edu.tw/php_system/news/upload/POJ%E9%A1%8C%E7%9B%AE%E8%A8%93%E7%B7%B4%E8%A8%88%E5%8A%83.doc
+.. __: MOON298.rst
 
 
 要生成HTML，请在git clone后运行make。

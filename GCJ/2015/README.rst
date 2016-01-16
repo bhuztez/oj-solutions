@@ -69,9 +69,9 @@ Round 1C
 =============== ===============================
 问题代号        解题报告
 =============== ===============================
-`4244486-p0`__  `Counter Culture`__
-`4244486-p1`__  `Noisy Neighbors`__
-`4244486-p2`__  `Hiking Deer`__
+`4244486-p0`__  `Brattleship`__
+`4244486-p1`__  `Typewriter Monkey`__
+`4244486-p2`__  `Less Money, More Problems`__
 =============== ===============================
 
 .. __: https://code.google.com/codejam/contest/4244486/dashboard#s=p0

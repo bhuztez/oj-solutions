@@ -1,21 +1,26 @@
 - [ ] 辅助
-  - [ ] 随机数生成
+  - [ ] 随机数生成 (pseudo random number generator)
     - [ ] Xorshift
+      - [ ] Xorshift128
+      - [ ] Xorshift128*
+      - [x] Xorshift128+
   - [ ] 字符串hash
-    - [ ] SipHash
+    - [x] SipHash
 - [ ] 数据结构 (Data Structure)
+  - [ ] 数组 (Array)
   - [ ] 栈 (Stack)
   - [ ] 队列 (Queue)
   - [ ] Set
-  - [ ] Bag (multiset)
+  - [ ] Bag (Multiset)
   - [ ] Map
   - [ ] Multimap
   - [ ] 双端队列 (Double-ended Queue)
     - [ ] 环行缓冲区 (Circular Buffer)
     - [ ] 双向列表 (Doubly linked list)
   - [ ] 堆 (Heap)
-    - [ ] Binary Heap
+    - [ ] d-ary Heap
   - [ ] 优先队列 (Priority Queue)
+    - [x] d-ary Heap
   - [ ] 树 (Tree)
     - [ ] AVL Tree
     - [ ] 红黑树 (Red Black Tree)
@@ -45,7 +50,7 @@
   - [ ] 后缀数组 (Suffix Array)
     - [ ] prefix doubling
     - [ ] DC3
-    - [ ] LCP Array
+    - [x] LCP Array
   - [ ] 后缀树
   - [ ] 后缀自动机
   - [ ] BWT
@@ -55,6 +60,10 @@
     - [ ] Manacher's Algorithm
   - [ ] Trie
   - [ ] Range Minimum Query
+    - [ ] Full Table
+    - [ ] Tree Table
+    - [ ] Sparse Table
+    - [ ] FischerHeunTable
 - [ ] 图论
   - [ ] Lowest Common Ancestor
   - [ ] Topological sort

@@ -37,20 +37,42 @@
 
 - [ ] Bit Set
 - [ ] HashTable
-- [ ] Treap
 - [ ] Trie
+- [ ] Treap
+- [ ] Catersian Tree
+- [ ] Interval Tree
+- [ ] Segment Tree
+- [ ] Disjoint Set
+- [ ] Binary Indexed Tree
+- [ ] Skip List
+- [ ] Splay Tree
+- [ ] B Tree
 
 ## 计算
 
 - [ ] 矩阵
 - [ ] 大数运算
-  - [ ] 二进制
   - [ ] 进制转换
-  - [ ] 任意进制
+  - [ ] 整数
+    - [ ] 加/减法
+    - [ ] 乘法
+      - [ ] 竖式乘法
+      - [ ] Toom-Cook
+      - [ ] NTT
+  - [ ] 分数
+  - [ ] 浮点数
 
 ## 排序 (Sorting)
 
 - [ ] 求逆序数
+- [ ] selection sort
+- [ ] insertion sort
+- [x] heap sort
+- [ ] counting sort
+- [ ] radix sort
+  - [ ] lsd
+  - [ ] msd
+
 
 ## 搜索 (Search)
 
@@ -80,30 +102,35 @@
 - [ ] permutation
   - [ ] prev/next permutation
 - [ ] 回文子串长度
-  - [ ] Manacher's Algorithm
+  - [x] Manacher's Algorithm
 - [ ] Range Minimum Query
   - [ ] Full Table
   - [ ] Tree Table
   - [ ] Sparse Table
-  - [ ] FischerHeunTable
+  - [ ] Fischer-Heun Table
 
 ## 图论 (Graph Theory)
+
+- [ ] Euler Tour/Path
 - [ ] Lowest Common Ancestor
-- [x] Topological sort
-- [x] Strongly Connected Components
-- [ ] Biconnected Components, Finding articulation points and bridges
-- [ ] 最小生成树 (Minimum Spanning Tree)
-  - [x] Prim's algorithm
-  - [x] Kruskal's algorithm
-- [ ] 最短路径 (Shortest Path)
-  - [ ] Floyd-Warshall
-  - [ ] Bellman-Ford
-  - [ ] Dijkstra
+- [x] 拓扑排序 (Topological sort)
+- [x] 强连通分量 (Strongly Connected Components)
+- [ ] 双连通分量 (Biconnected Components)
+  - [ ] Finding articulation points
+  - [ ] Finding bridges
 
 ## 优化 (Optimization)
 
 - [ ] 贪婪
+  - [ ] 最小生成树 (Minimum Spanning Tree)
+    - [x] Prim's algorithm
+    - [x] Kruskal's algorithm
+- [ ] 最短路径 (Shortest Path)
+  - [ ] Floyd-Warshall
+  - [x] Bellman-Ford
+  - [ ] Dijkstra
 - [ ] 网络流
+  - [ ] Edmonds-Karp
 
 ## 计算几何 (Computational Geometry)
 

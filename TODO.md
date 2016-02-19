@@ -39,10 +39,10 @@
 - [ ] selection sort
 - [ ] insertion sort
 - [x] heap sort
-- [ ] counting sort
-- [ ] radix sort
-  - [ ] lsd
-  - [ ] msd
+- [x] counting sort
+- [x] radix sort
+  - [x] lsd
+  - [x] msd
 
 ## 计算
 
@@ -71,7 +71,6 @@
 - [ ] Binary Indexed Tree
 - [ ] Skip List
 - [ ] Splay Tree
-- [ ] B Tree
 
 ## 递归 (Recursion)
 
@@ -89,7 +88,7 @@
   - [ ] Regular Expression
   - [ ] Parsing
 - [ ] 后缀数组 (Suffix Array)
-  - [ ] prefix doubling
+  - [x] prefix doubling
   - [ ] DC3
   - [x] LCP Array
 - [ ] BWT
@@ -100,7 +99,7 @@
 - [ ] Range Minimum Query
   - [ ] Full Table
   - [ ] Tree Table
-  - [ ] Sparse Table
+  - [x] Sparse Table
   - [ ] Fischer-Heun Table
 
 ## 图论 (Graph Theory)
@@ -116,7 +115,7 @@
   - [x] 强连通分量 (Strongly Connected Components)
   - [ ] 双连通分量 (Biconnected Components)
     - [ ] Finding articulation points
-    - [ ] Finding bridges
+    - [x] Finding bridges
 
 ## 图论与优化 (Graph Theory and Optimization)
 
@@ -125,11 +124,16 @@
     - [x] Prim's algorithm
     - [x] Kruskal's algorithm
 - [ ] 最短路径 (Shortest Path)
-  - [ ] Floyd-Warshall
+  - [x] Floyd-Warshall
   - [x] Bellman-Ford
   - [ ] Dijkstra
-- [ ] 网络流
-  - [ ] Edmonds-Karp
+- [ ] 网络流 (Network Flow)
+  - [ ] 最大流 (Maximum Flow)
+    - [x] Edmonds-Karp
+  - [ ] Minimum Cost Maximum Flow
+  - [ ] Bipartite Matching
+  - [ ] Maximum weighted Bipartite Matching
+  - [ ] Minimum Cut
 
 ## 计算几何 (Computational Geometry)
 

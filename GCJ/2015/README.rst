@@ -40,11 +40,11 @@ Round 1A
 =============== ========= ===============================
 
 .. __: https://code.google.com/codejam/contest/4224486/dashboard#s=p0
-.. __: R1A-A.rst
+.. __: 1A-A.rst
 .. __: https://code.google.com/codejam/contest/4224486/dashboard#s=p1
-.. __: R1A-B.rst
+.. __: 1A-B.rst
 .. __: https://code.google.com/codejam/contest/4224486/dashboard#s=p2
-.. __: R1A-C.rst
+.. __: 1A-C.rst
 
 
 Round 1B
@@ -61,11 +61,11 @@ Round 1B
 =============== ======== ===============================
 
 .. __: https://code.google.com/codejam/contest/8224486/dashboard#s=p0
-.. __: R1B-A.rst
+.. __: 1B-A.rst
 .. __: https://code.google.com/codejam/contest/8224486/dashboard#s=p1
-.. __: R1B-B.rst
+.. __: 1B-B.rst
 .. __: https://code.google.com/codejam/contest/8224486/dashboard#s=p2
-.. __: R1B-C.rst
+.. __: 1B-C.rst
 
 
 Round 1C
@@ -82,11 +82,11 @@ Round 1C
 =============== ======== ===============================
 
 .. __: https://code.google.com/codejam/contest/4244486/dashboard#s=p0
-.. __: R1C-A.rst
+.. __: 1C-A.rst
 .. __: https://code.google.com/codejam/contest/4244486/dashboard#s=p1
-.. __: R1C-B.rst
+.. __: 1C-B.rst
 .. __: https://code.google.com/codejam/contest/4244486/dashboard#s=p2
-.. __: R1C-C.rst
+.. __: 1C-C.rst
 
 
 Round 2
@@ -104,13 +104,13 @@ Round 2
 =============== ======== ===============================
 
 .. __: https://code.google.com/codejam/contest/8234486/dashboard#s=p0
-.. __: R2-A.rst
+.. __: 2-A.rst
 .. __: https://code.google.com/codejam/contest/8234486/dashboard#s=p1
-.. __: R2-B.rst
+.. __: 2-B.rst
 .. __: https://code.google.com/codejam/contest/8234486/dashboard#s=p2
-.. __: R2-C.rst
+.. __: 2-C.rst
 .. __: https://code.google.com/codejam/contest/8234486/dashboard#s=p3
-.. __: R2-D.rst
+.. __: 2-D.rst
 
 
 Round 3
